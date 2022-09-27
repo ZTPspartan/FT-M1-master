@@ -80,22 +80,22 @@ console.log(pm); // Franco
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3"        // 2
+"2" * "3"      // 6
+4 + 5 + "px"   // 9px
+"$" + 4 + 5    // $45
+"4" - 2        // 2
+"4px" - 2      // Nan
+7 / 0          // Infinity
+{}[0]          // Undifined
+parseInt("09") // 9
+5 && 2         // 2
+2 && 5         // 5
+5 || 0         // 5
+0 || 5         // 5
+[3]+[3]-[10]   // 23
+3>2>1          // False 
+[] == ![]      // True //reza por no tener q usar esto
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -107,12 +107,12 @@ parseInt("09")
 
 ```javascript
 function test() {
-   console.log(a);
-   console.log(foo());
+   console.log(a);      // Undifined output
+   console.log(foo());  //   2       output 
 
    var a = 1;
-   function foo() {
-      return 2;
+   function foo() { // 
+      return 2;   
    }
 }
 
@@ -125,9 +125,9 @@ Y el de este código? :
 var snack = 'Meow Mix';
 
 function getFood(food) {
-    if (food) {
+    if (food) {     
         var snack = 'Friskies';
-        return snack;
+        return snack; 
     }
     return snack;
 }
@@ -145,18 +145,18 @@ var fullname = 'Juan Perez';
 var obj = {
    fullname: 'Natalia Nerea',
    prop: {
-      fullname: 'Aurelio De Rosa',
+      fullname: 'Aurelio De Rosa', 
       getFullname: function() {
-         return this.fullname;
+         return this.fullname;      
       }
    }
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // Aurelio De Rosa output
 
-var test = obj.prop.getFullname;
+var test = obj.prop.getFullname; 
 
-console.log(test());
+console.log(test());                // Undifined         output
 ```
 
 ### Event loop
@@ -165,10 +165,10 @@ Considerando el siguiente código, ¿Cuál sería el orden en el que se muestra 
 
 ```javascript
 function printing() {
-   console.log(1);
-   setTimeout(function() { console.log(2); }, 1000);
-   setTimeout(function() { console.log(3); }, 0);
-   console.log(4);
+   console.log(1);                                       // 1   primero
+   setTimeout(function() { console.log(2); }, 1000);     // 4   cuarto
+   setTimeout(function() { console.log(3); }, 0);        // 3   tercero
+   console.log(4);                                       // 2   segundo
 }
 
 printing();
