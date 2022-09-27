@@ -111,7 +111,7 @@ function test() {
    console.log(foo());  //   2       output 
 
    var a = 1;
-   function foo() { // 
+   function foo() { 
       return 2;   
    }
 }
@@ -132,7 +132,7 @@ function getFood(food) {
     return snack;
 }
 
-getFood(false);
+getFood(false);                  // undifined output
 ```
 
 
