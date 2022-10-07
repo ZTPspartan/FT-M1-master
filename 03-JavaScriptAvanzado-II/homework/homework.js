@@ -7,18 +7,17 @@ function counter() {
   Ejercicio 1
 
   La función counter debe retornar otra función. Esta función retornada debe actuar como un contador, retornando un valor numérico que empieza en 1 e incrementa con cada invocación.
-
+  
   Ejemplo:
-  const nuevoContador = counter()
-  nuevoContador()     // 1
-  nuevoContador()     // 2
-  nuevoContador()     // 3
-
-  const otroContador = counter()
-  otroContador()      // 1
-  otroContador()      // 2
-  otroContador()      // 3
+  const nuevoContador = counter()            const otroContador = counter()
+  nuevoContador()     // 1                     otroContador()      // 1    
+  nuevoContador()     // 2                     otroContador()      // 2
+  nuevoContador()     // 3                     otroContador()      // 3    
    */
+  let numero = 1;     //
+  return function(){  //
+    return numero++;  //
+  } 
 }
 
 function cacheFunction(cb) {
@@ -41,6 +40,16 @@ function cacheFunction(cb) {
   squareCache(5)    // no volverá a invocar a square, simplemente buscará en la caché cuál es el resultado de square(5) y lo retornará (tip: si usaste un objeto, podés usar hasOwnProperty) 
 
   */
+ let cache ={};                 // * Crea el cache  cache={5:10}
+  return function(arg){         // * crea en cachefuntion esa funcion si existe arg=5 en el objeto cache
+    if(cache.hasOwnProperty(arg)){  // ? Veridica la propiedad del argumento si ya existe
+      return cache[arg];        // ! devuelve el valor ya existente y termina el codigo
+    }
+    
+    cache[arg]=cb(arg);             //todo: añade al cache el argumento y el valor
+    return cache[arg];;                 // ! devuelve el valor
+  }
+ 
 }
 
 // Bind
@@ -67,8 +76,8 @@ function getNombre() {
   Usando el método bind() guardar, en las dos variables declaradas a continuación, dos funciones que actúen como getNombre pero retornen el nombre del instructor y del alumno, respectivamente.
 */
 
-let getNombreInstructor;
-let getNombreAlumno;
+let getNombreInstructor=getNombre.bind(instructor);
+let getNombreAlumno=getNombre.bind(alumno);
 
 /*
   Ejercicio 4
@@ -80,9 +89,9 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
   return delimitadorIzquierda + cadena + delimitadorDerecha;
 }
 
-let textoAsteriscos;
-let textoGuiones;
-let textoUnderscore;
+let textoAsteriscos = crearCadena.bind(this, "*", "*");
+let textoGuiones = crearCadena.bind(this, "-", "-");
+let textoUnderscore = crearCadena.bind(this, "_", "_");
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------

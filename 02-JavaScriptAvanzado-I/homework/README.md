@@ -22,7 +22,7 @@ var c = function(a, b, c) { // 8,9,10
     b = c; // 10
     var x = 5;
   }
-  f(a,b,c); // 8,10,10
+  f(a,b,c); // 8,9,10
   console.log(b); //9
 }
 //---------------------------
@@ -87,14 +87,14 @@ console.log(pm); // Franco
 "4" - 2        // 2
 "4px" - 2      // Nan
 7 / 0          // Infinity
-{}[0]          // Undifined
+{}[0]          // [0] o Undifined
 parseInt("09") // 9
 5 && 2         // 2
 2 && 5         // 5
 5 || 0         // 5
 0 || 5         // 5
 [3]+[3]-[10]   // 23
-3>2>1          // False 
+3>2>1          // False
 [] == ![]      // True //reza por no tener q usar esto
 ```
 
@@ -156,7 +156,7 @@ console.log(obj.prop.getFullname()); // Aurelio De Rosa output
 
 var test = obj.prop.getFullname; 
 
-console.log(test());                // Undifined         output
+console.log(test());                // Undifined  o Juan Perez       output
 ```
 
 ### Event loop

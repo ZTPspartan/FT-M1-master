@@ -1,4 +1,4 @@
-function Queue() {
+function Queue() { //FIFO cola supermercador
   this.array = [];
 }
 

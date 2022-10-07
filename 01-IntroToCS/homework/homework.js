@@ -36,6 +36,30 @@ function DecimalABinario(num) {
   return binario;
 }
 
+/*
+function DecimalABinario(num){
+
+  let bin = [];
+  let result;
+    if (num>1) {
+      bin.unshift(num%2)
+      num = Math.floor(num/2)
+      return bin;
+    }else 
+    console.log(num);
+    return DecimalABinario(Math.floor(num/2));
+}
+
+console.log(DecimalABinario(5))
+
+function DecimalABinario(num) {
+  
+  if (num === 1) return "1";
+
+  return DecimalABinario(Math.floor(num/2)) + (num%2);
+}
+console.log(DecimalABinario(7))
+*/
 
 module.exports = {
   BinarioADecimal,
